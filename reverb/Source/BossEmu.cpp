@@ -102,7 +102,7 @@ void BossEmu::setParameters(int mode, int time, int level) {
 			sawBits = 0;
 			return;
 		}
-		romBaseIx = romBase;
+		romBaseIx = static_cast<int>(romBase);
 		sawBits = 1 << (time & 3);
 	} else if (emuMode == RV_2_EMU_MODE) {
 		mode = extendedModesEnabled ? mode & 0x1F : mode & 0x0F;
@@ -113,7 +113,7 @@ void BossEmu::setParameters(int mode, int time, int level) {
 			sawBits = 0;
 			return;
 		}
-		romBaseIx = romBase;
+		romBaseIx = static_cast<int>(romBase);
 		sawBits = 1 << (time & 3);
 	}
 }
